@@ -1,0 +1,12 @@
+{
+    "references": [
+        {
+            "path": "./order-rest"
+        },
+        {
+            "path": "../order-domain"
+        }
+    ],
+    "files": [],
+    "include": []
+}

@@ -1,0 +1,43 @@
+version: "3.5"
+services:
+    user-service:
+        build: .
+        container_name: "user-service"
+        ports:
+            - "4000:3000"
+        networks:
+            - user-network
+    order-service:
+        build: .
+        container_name: "order-service"
+        ports:
+            - "4001:3000"
+        networks:
+            - order-network
+    user-database:
+        image: postgres
+        container_name: "user-database"
+        environment:
+            POSTGRES_PASSWORD: admin
+        ports:
+            - 5432:5432
+        volumes:
+            - ./user-service/user-boot/resources:/docker-entrypoint-initdb.d
+        networks:
+            - user-network
+    order-database:
+        image: postgres
+        container_name: "order-database"
+        environment:
+            POSTGRES_PASSWORD: admin
+        ports:
+            - 5433:5432
+        volumes:
+            - ./order-service/order-boot/resources:/docker-entrypoint-initdb.d
+        networks:
+            - order-network
+networks:
+    user-network:
+        name: "user-network"
+    order-network:
+        name: "order-network"

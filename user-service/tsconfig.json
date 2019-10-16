@@ -1,0 +1,18 @@
+{
+    "extends": "../tsconfig.json",
+    "references": [
+        {
+            "path": "./user-domain"
+        },
+        {
+            "path": "./user-boot"
+        },
+        {
+            "path": "./user-api"
+        },
+        {
+            "path": "./user-spi"
+        }
+    ],
+    "include": []
+}

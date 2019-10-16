@@ -1,0 +1,13 @@
+{
+    "name": "user-service",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node user-boot",
+        "dev": "concurrently 'npx tsc  --build --force --watch tsconfig.json' 'nodemon -q user-boot/dist/index.js'"
+    },
+    "devDependencies": {
+        "concurrently": "^7.6.0",
+        "nodemon": "^2.0.20"
+    }
+}

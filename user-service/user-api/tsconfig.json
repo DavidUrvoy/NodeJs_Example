@@ -1,0 +1,12 @@
+{
+    "references": [
+        {
+            "path": "./user-rest"
+        },
+        {
+            "path": "../user-domain"
+        }
+    ],
+    "files": [],
+    "include": []
+}

@@ -1,0 +1,18 @@
+{
+    "extends": "../tsconfig.json",
+    "references": [
+        {
+            "path": "./order-domain"
+        },
+        {
+            "path": "./order-boot"
+        },
+        {
+            "path": "./order-api"
+        },
+        {
+            "path": "./order-spi"
+        }
+    ],
+    "include": []
+}

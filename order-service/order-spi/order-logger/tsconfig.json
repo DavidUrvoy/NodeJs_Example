@@ -1,0 +1,17 @@
+{
+    "extends": "../../../tsconfig.json",
+    "compilerOptions": {
+        "rootDir": ".",
+        "outDir": "dist"
+    },
+    "include": [
+        "index.ts",
+        "src/**/*.ts",
+        "test/**/*.ts"
+    ],
+    "references": [
+        {
+            "path": "../../order-domain"
+        }
+    ]
+}
