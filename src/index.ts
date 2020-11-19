@@ -4,7 +4,7 @@ import createError from 'http-errors'
 import logger from 'morgan'
 import path from 'path'
 import indexRouter from './routes/index'
-import usersRouter from './routes/users'
+import users_router from './controllers/user-controller'
 
 let app: Express = express()
 const port = 3000
@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
+app.use('/users', users_router)
 
 // catch 404 and forward to error handler
 app.use((_request: Request, _response: Response, next: NextFunction) => next(createError(404)))
