@@ -11,6 +11,7 @@ var path_1 = __importDefault(require("path"));
 var index_1 = __importDefault(require("./routes/index"));
 var users_1 = __importDefault(require("./routes/users"));
 var app = express_1.default();
+var port = 3000;
 // view engine setup
 app.set('views', path_1.default.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -32,4 +33,5 @@ app.use(function (err, request, response) {
     response.status(err.status || 500);
     response.render('error');
 });
+app.listen(port, function () { return console.log("Node service listening at http://localhost:" + port); });
 exports.default = app;
