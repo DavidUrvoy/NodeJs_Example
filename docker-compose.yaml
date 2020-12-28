@@ -1,0 +1,20 @@
+version: "3.5"
+services:
+    user-service:
+        build: .
+        container_name: "user-service"
+        ports:
+            - "3000:3000"
+        networks:
+            - microservices-network
+    database:
+        image: postgres
+        container_name: "database"
+        environment:
+            POSTGRES_PASSWORD: admin
+        networks:
+            - microservices-network
+networks:
+    microservices-network:
+        name: "microservices-network"
+
