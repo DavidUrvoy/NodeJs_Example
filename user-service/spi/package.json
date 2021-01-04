@@ -1,0 +1,6 @@
+{
+    "name": "spi",
+    "version": "0.0.1",
+    "private": true,
+    "workspaces": ["repository"]
+}

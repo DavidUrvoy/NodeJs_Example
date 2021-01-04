@@ -2,5 +2,5 @@
 # yarn lockfile v1
 
 
-payment-service@./payment-service:
+payment-service@../../payment-service:
   version "0.0.1"

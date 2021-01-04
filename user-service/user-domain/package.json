@@ -1,0 +1,17 @@
+{
+    "name": "user-domain",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "license": "Apache-2.0",
+    "keywords": [],
+    "scripts": {
+        "prepare": "tsc",
+        "test": "jest"
+    },
+    "dependencies": {
+        "payment-service": "../../payment-service"
+    }
+}

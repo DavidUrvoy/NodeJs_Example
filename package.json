@@ -1,4 +1,4 @@
 {
     "private": true,
-    "workspaces": ["user-service", "payment-service"]
+    "workspaces": ["user-service", "payment-service", "shipping-service"]
 }

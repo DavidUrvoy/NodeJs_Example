@@ -2,9 +2,7 @@ import express, {Request, Response} from 'express'
 
 let index_router = express.Router();
 
-let pgp = require('pg-promise')();
-let db = pgp('postgres://postgres:passwd@postgres:5432/postgres')
-
+// let db = pgp('postgres://postgres:passwd@postgres:5432/postgres')
 
 /* GET home page. */
 export default index_router.get('/', (_: Request, response: Response) => {

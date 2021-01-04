@@ -3,23 +3,22 @@ import express, {Express, NextFunction, Request, Response} from 'express'
 import createError from 'http-errors'
 import logger from 'morgan'
 import path from 'path'
-import indexRouter from './routes/index'
-import users_router from './controllers/user-controller'
+import index_router from './routes/index.js'
+import users_router from '../api/rest/user-controller.js'
 
 let app: Express = express()
 const port = 3000
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'jade')
-
+// app.set('views', path.join(__dirname, 'views'))
+// app.set('view engine', 'jade')
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', indexRouter)
+app.use('/', index_router)
 app.use('/users', users_router)
 
 // catch 404 and forward to error handler

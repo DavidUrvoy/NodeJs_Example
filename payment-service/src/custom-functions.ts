@@ -1,3 +1,3 @@
 export function custom() {
-    console.log("hello");
+    console.log("hello")
 }
