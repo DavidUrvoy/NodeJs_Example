@@ -1,8 +1,11 @@
 {
-    "private": true,
-    "workspaces": ["domain", "boot", "api", "spi"],
     "name": "user-service",
     "version": "0.0.1",
-    "dependencies": {
-    }
+    "private": true,
+    "workspaces": [
+        "user-domain",
+        "user-boot",
+        "user-api",
+        "user-spi"
+    ]
 }

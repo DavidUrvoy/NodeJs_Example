@@ -1,5 +1,5 @@
 {
-    "name": "user-domain",
+    "name": "user-repository",
     "version": "0.0.1",
     "private": true,
     "main": "dist/index",
@@ -7,5 +7,8 @@
     "scripts": {
         "prepare": "tsc --build --force tsconfig.json",
         "test": "jest"
+    },
+    "dependencies": {
+        "user-domain": "0.0.1"
     }
 }

@@ -2,3 +2,5 @@
 # yarn lockfile v1
 
 
+"user-domain@file:../user-domain":
+  version "0.0.1"

@@ -3,8 +3,8 @@ import express, {Express, NextFunction, Request, Response} from 'express'
 import createError from 'http-errors'
 import logger from 'morgan'
 import path from 'path'
-import index_router from './routes/index.js'
-import users_router from '../api/rest/user-controller.js'
+import index_router from './src/routes/index'
+import userController from 'user-rest'
 
 let app: Express = express()
 const port = 3000
@@ -19,7 +19,7 @@ app.use(cookieParser())
 // app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', index_router)
-app.use('/users', users_router)
+app.use('/users', userController)
 
 // catch 404 and forward to error handler
 app.use((_request: Request, _response: Response, next: NextFunction) => next(createError(404)))
