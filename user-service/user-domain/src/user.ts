@@ -1,5 +1,7 @@
+import {v4} from 'uuid/interfaces';
+
 export interface User {
-    id?: string
+    id?: v4
     first_name: string
     last_name: string
     birth_date: Date
