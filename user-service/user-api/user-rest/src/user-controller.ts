@@ -5,12 +5,17 @@ import {UserRepository} from 'user-repository'
 let users_router = express.Router()
 
 users_router.get('/', (_: Request, response: Response) => {
-    response.send(new UserService(new UserRepository()).find_all())
+    new UserService(new UserRepository()).find_all()
+        .then(users =>
+            response.send(users)
+        )
 })
 
 users_router.get('/:id', ({params}: Request, response: Response) => {
-    console.log({id: params["id"]})
-    response.send(new UserService(new UserRepository()).get_user(params["id"]))
+    new UserService(new UserRepository()).get_user(params["id"])
+        .then(user =>
+            response.send(user)
+        )
 })
 
 users_router.post('/', ({body}: Request, response: Response) => {

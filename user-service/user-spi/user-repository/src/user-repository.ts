@@ -1,46 +1,41 @@
+import {Client} from 'pg'
 import {User, UserPort} from 'user-domain'
 
-const {Pool, Client} = require('pg')
-const pool = new Pool({
+const client = new Client({
     user: 'postgres',
     host: 'database',
     database: 'microservices',
     password: 'admin',
     port: 5432,
 })
-pool.query('SELECT NOW()', (err: any, res: any) => {
-    console.log(err, res)
-    pool.end()
-})
-const client = new Client({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'database',
-    password: 'admin',
-    port: 5432,
-})
 client.connect()
-client.query('SELECT NOW()', (err: any, res: any) => {
-    console.log(err, res)
-    client.end()
-})
 
 export class UserRepository implements UserPort {
 
-    find_all(): User[] {
-        throw new Error('Method not implemented.');
+    find_all(): Promise<User[]> {
+        return client.query(`SELECT * from users`)
+            .then(({rows: users}: {rows: User[]}) => users)
     }
-    get_user(id: string): User {
-        return new User("3cef3028-16c3-475b-9ac2-fca78960048e ", "Bruce", "Wayne", new Date(1978, 3, 17))
+    get_user(id: string): Promise<User> {
+        return client.query(`SELECT * from users WHERE id = ${id}`)
+            .then(({rows: user}: {rows: User[]}) => user[0])
     }
     create_user(user: User): string {
-        throw new Error('Method not implemented.');
+        client.query(`INSERT into users (id, first_name, last_name, birth_date) VALUES ('${user.id}', '${user.first_name}', '${user.last_name}', '${user.birth_date}')`)
+        return user?.id || "coucou"
     }
     update_user(id: string, user: User): string {
-        throw new Error('Method not implemented.');
+        client.query(`UPDATE users
+        SET
+        id = '${user.id}',
+        first_name = '${user.first_name}',
+        last_name = '${user.last_name}',
+        birth_date = '${user.birth_date}'
+        WHERE id = '${user.id}'`)
+        return user?.id || "coucou"
     }
     delete_user(id: string): void {
-        throw new Error('Method not implemented.');
+        client.query(`DELETE from users where id = '${id}'`)
     }
 
 }
