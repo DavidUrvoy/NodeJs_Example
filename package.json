@@ -3,10 +3,7 @@
     "version": "0.0.1",
     "private": true,
     "workspaces": [
-        "user-service/user-domain",
-        "user-service/user-boot",
-        "user-service/user-api/user-rest",
-        "user-service/user-spi/user-repository"
+        "user-service/**"
     ],
     "scripts": {
         "prepare": "npm run compile",

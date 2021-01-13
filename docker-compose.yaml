@@ -12,8 +12,10 @@ services:
         container_name: "database"
         environment:
             POSTGRES_PASSWORD: admin
+        ports:
+          - 5432:5432
         volumes:
-            - ./src/resources:/docker-entrypoint-initdb.d
+            - ./user-service/user-boot/resources:/docker-entrypoint-initdb.d
         networks:
             - microservices-network
 networks:
