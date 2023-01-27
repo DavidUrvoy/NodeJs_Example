@@ -3,11 +3,10 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "start": "node user-boot",
-        "dev": "concurrently 'npx tsc  --build --force --watch tsconfig.json' 'nodemon -q user-boot/dist/index.js'"
+        "dev": "nodemon --transpile-only order-boot/index.ts"
     },
     "devDependencies": {
-        "concurrently": "^7.6.0",
-        "nodemon": "^2.0.20"
+        "nodemon": "^2.0.20",
+        "ts-node": "^10.9.1"
     }
 }

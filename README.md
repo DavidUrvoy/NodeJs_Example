@@ -10,4 +10,4 @@ Pour chaque service :
 
 - Démarrer les conteneurs des bases de données : `docker compose up -d user-database order-database`
 - Installer le projet : `pnpm i`
-- Démarrer un microservice : depuis la racine d'un MS (./user-service ou ./order-service) : `pnpm run dev`
+- Démarrer un microservice : depuis la racine d'un MS (./user-service ou ./order-service) : `pnpm dev`

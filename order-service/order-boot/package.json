@@ -5,7 +5,8 @@
     "main": "dist/index",
     "types": "dist/index",
     "scripts": {
-        "prepare": "tsc --build --force tsconfig.json",
+        "compile": "tsc --build --force tsconfig.json",
+        "start": "node .",
         "test": "jest"
     },
     "devDependencies": {
