@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "🌱 root",
+			"path": "."
+		},
+		{
+			"name": "🙋‍♂️ User",
+			"path": "user-service"
+		},
+		{
+			"name": "🎁 Order",
+			"path": "order-service"
+		}
+	]
+}
